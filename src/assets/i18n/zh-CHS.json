@@ -1,0 +1,10 @@
+{
+  "title": "会员接口自动化测试系统",
+  "login": {
+    "placeholder": {
+      "username": "请输入用户名",
+      "password": "请输入密码"
+    },
+    "btn": "登录"
+  }
+}

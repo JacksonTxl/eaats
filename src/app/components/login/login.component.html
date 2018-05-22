@@ -3,18 +3,18 @@
   <section>
     <div class="bg"></div>
     <div class="content">
-      <label>会员接口自动化测试系统</label>
-      <input type="text" placeholder="Username" autofocus/>
-      <input type="password" placeholder="Password" autofocus/>
+      <label>{{'title' | translate}}</label>
+      <input type="text" [placeholder]="'login.placeholder.username' | translate" autofocus/>
+      <input type="password" [placeholder]="'login.placeholder.password' | translate" autofocus/>
       <div class="change-label">
         <p>
-          <label class="active">中文</label>/<label>English</label>
+          <label [class.active]="languageClassFlag" (click)="onChangeLanguage('zh-CHS')">中文</label>/<label [class.active]="!languageClassFlag" (click)="onChangeLanguage('en')">English</label>
         </p>
         <p>
           <label>用户注册</label>/<label>忘记密码</label>
         </p>
       </div>
-      <button>LOGIN</button>
+      <button (click)="onLogin();">{{'login.btn' | translate}}</button>
     </div>
   </section>
   <footer>

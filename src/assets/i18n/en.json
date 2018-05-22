@@ -1,0 +1,10 @@
+{
+  "title": "Auto Test System",
+  "login": {
+    "placeholder": {
+      "username": "Username",
+      "password": "Password"
+    },
+    "btn": "LOGIN"
+  }
+}

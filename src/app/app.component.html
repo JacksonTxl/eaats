@@ -1,7 +1,5 @@
 
-<app-login *ngIf="!isLogin"></app-login>
+<app-login *ngIf="!isLogin" (login)="completeLogin($event);"></app-login>
 <div *ngIf="isLogin">
-  <input type="text" pInputText />
-
-  <p-checkbox name="groupname" value="val1"></p-checkbox>123
+  <router-outlet></router-outlet>
 </div>
