@@ -1,5 +1,5 @@
 
-<app-login *ngIf="!isLogin" (login)="completeLogin($event);"></app-login>
+<app-login *ngIf="!isLogin"></app-login>
 <div *ngIf="isLogin">
   <router-outlet></router-outlet>
 </div>

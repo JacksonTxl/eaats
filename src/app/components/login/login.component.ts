@@ -2,6 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { TranslateLanguageService } from '../../services/translate-language.service';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Rx';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -12,18 +13,25 @@ import { Subject } from 'rxjs/Rx';
 export class LoginComponent implements OnInit {
   languageClassFlag = true;
 
-  @Output()
-  login = new Subject();
-  constructor(private translate1: TranslateLanguageService, private router: Router) { }
+  constructor(
+    private translate1: TranslateLanguageService,
+    private router: Router,
+    private authService: AuthService,
+  ) { }
 
   ngOnInit() {
   }
+
   onChangeLanguage (lang: string) {
     this.translate1.changeLanguage(lang);
     this.languageClassFlag = !this.languageClassFlag;
   }
+
   onLogin () {
-    this.login.next(true);
-    this.router.navigate(['/home']);
+    this.authService.login().then(result => {
+      if (result) {
+        this.router.navigateByUrl('/home');
+      }
+    });
   }
 }
