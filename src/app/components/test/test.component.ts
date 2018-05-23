@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  template: `<router-outlet></router-outlet>`,
+  template:
+  `
+    test
+    <router-outlet></router-outlet>
+  `,
 })
 export class TestComponent implements OnInit {
 
