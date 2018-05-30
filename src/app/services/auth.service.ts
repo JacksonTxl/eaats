@@ -25,15 +25,12 @@ export class AuthService {
 
   login(): Promise<any> {
     return new Promise((resolve, reject) => {
-      console.log(1);
       setTimeout(() => {
         CookieUtil.setCookie('session', '1', 24 * 60 * 60 * 1000);
         this.isLoginFlag = true;
-        console.log(2);
         this.loginSubject.next(true);
         resolve(true);
       }, 1000);
-      console.log(3);
     });
   }
 }
