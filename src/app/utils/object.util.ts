@@ -15,7 +15,7 @@ export class ObjectUtil {
     }
     for (const value of Object.entries(originObj)) {
       dest[value[0]] = value[1];
-      console.log(value[1].classes);
+      console.log(value[1].toString());
     }
     return dest;
   }

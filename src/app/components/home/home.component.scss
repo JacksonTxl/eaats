@@ -1,0 +1,14 @@
+ul{
+  height: 200px;
+  list-style: none;
+  overflow: auto;
+  >li{
+    height: 50px;
+    &.odd{
+     background-color: red;
+    }
+    &.even{
+      background-color: blue;
+    }
+  }
+}
