@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { TranslateLanguageService } from '../../services/translate-language.service';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs/Rx';
 import { AuthService } from '../../services/auth.service';
 
 
