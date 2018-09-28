@@ -12,6 +12,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestUtilComponent } from './test-util/test-util.component';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,7 +38,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

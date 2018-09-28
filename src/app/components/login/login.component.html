@@ -2,10 +2,26 @@
   <div></div>
   <section>
     <div class="bg"></div>
-    <div class="content">
+    <div class="content" [formGroup]="loginForm">
       <label>{{'title' | translate}}</label>
-      <input type="text" [placeholder]="'login.placeholder.username' | translate" autofocus/>
-      <input type="password" [placeholder]="'login.placeholder.password' | translate" autofocus/>
+      <input type="text" id="name"
+             formControlName="name" required
+             [placeholder]="'login.placeholder.username' | translate" autofocus/>
+
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <p *ngIf="name.errors.required">
+          UserName is required.
+        </p>
+        <p *ngIf="name.errors.forbiddenName">
+          UserName contains forbiddenName.
+        </p>
+      </div>
+      <input type="password" id="password" formControlName="password" required [placeholder]="'login.placeholder.password' | translate" autofocus/>
+      <div *ngIf="pwd.invalid && (pwd.dirty || pwd.touched)">
+        <p *ngIf="pwd.errors.required">
+          Password is required.
+        </p>
+      </div>
       <div class="change-label">
         <p>
           <label [class.active]="languageClassFlag" (click)="onChangeLanguage('zh-CHS')">中文</label>/<label [class.active]="!languageClassFlag" (click)="onChangeLanguage('en')">English</label>
