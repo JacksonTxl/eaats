@@ -54,12 +54,12 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.getRawValue());
 
     if (!this.loginForm.valid) {
-      this.loginForm.patchValue();
+      // this.loginForm.patchValue();
     }
-    // this.authService.login().then(result => {
-    //   if (result) {
-    //     this.router.navigateByUrl('/home');
-    //   }
-    // });
+    this.authService.login().then(result => {
+      if (result) {
+        this.router.navigateByUrl('/home');
+      }
+    });
   }
 }

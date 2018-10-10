@@ -10,6 +10,8 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   isLogin = false;
 
+  // 菜单是否展示
+  menuShow = false;
   constructor (
     private authService: AuthService,
   ) {}

@@ -1,5 +1,36 @@
 
 <app-login *ngIf="!isLogin"></app-login>
-<div *ngIf="isLogin">
-  <router-outlet></router-outlet>
+<div *ngIf="isLogin" class="app-content">
+  <div class="menu">
+    <img src="../assets/images/logo.png">
+    <ul>
+      <div>
+        <li>
+          <i class="fa fa-3 fa-window-restore"></i>
+          <label>场务工作台</label>
+          <i class="fa fa-angle-down"></i>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="content">
+    <header>
+      <i class="fa fa-bars"></i>
+      <label>会员接口自动化测试系统</label>
+      <div (mouseleave)="menuShow = false;">
+        <div (mouseover)="menuShow = true;">
+          <i class="fa fa-user-o"></i>
+          <span>超级管理人员：admin</span>
+        </div>
+        <ul *ngIf="menuShow">
+          <li><i class="fa fa-user"></i><label>个人信息</label></li>
+          <li><i class="fa fa-cog"></i><label>修改密码</label></li>
+          <li><i class="fa fa-sign-out"></i><label>退出</label></li>
+        </ul>
+      </div>
+    </header>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  </div>
 </div>
