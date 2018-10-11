@@ -7,7 +7,7 @@ import { ObjectUtil } from '../../utils/object.util';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  value = 'test';
   constructor() { }
 
   ngOnInit() {

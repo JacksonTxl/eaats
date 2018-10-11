@@ -153,6 +153,9 @@
       height: calc(100% - 101px);
       overflow: auto;
       background: #eee;
+      >.router-content{
+        background-color: #ffffff;
+      }
     }
   }
 }
